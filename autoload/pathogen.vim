@@ -1,4 +1,4 @@
-2thogen.vim - path option manipulation
+" pathogen.vim - path option manipulation
 " Maintainer:   Tim Pope <vimNOSPAM@tpope.org>
 " Version:      1.2
 
