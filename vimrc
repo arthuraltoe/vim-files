@@ -201,3 +201,7 @@ map <A-D-Down> <c-w>j
 map <A-D-Up> <c-w>k
 map <A-D-Right> <c-w>l
 map <A-D-Left> <c-w>h
+
+" autocomplete
+let g:SuperTabDefaultCompletionType = "context"
+
