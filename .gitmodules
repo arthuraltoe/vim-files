@@ -44,7 +44,7 @@
   ignore = dirty
 [submodule "bundle/git"]
 	path = bundle/git
-	url = git://github.com/tpope/vim-git.git
+	url = https://github.com/tpope/vim-git.git
   ignore = dirty
 [submodule "bundle/endwise"]
 	path = bundle/endwise
