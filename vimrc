@@ -204,4 +204,4 @@ map <A-D-Left> <c-w>h
 
 " autocomplete
 let g:SuperTabDefaultCompletionType = "context"
-
+set completeopt=menuone,longest,preview
