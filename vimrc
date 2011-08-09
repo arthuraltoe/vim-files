@@ -79,15 +79,13 @@ let Tlist_Show_One_File = 1
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
 
-"explorer mappings
-nnoremap <f1> :BufExplorer<cr>
-nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f3> :TlistToggle<cr>
+" Command-/ to toggle comments
+map <D-/> <plug>NERDCommenterToggle<CR>
+imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
-" Command-T for CommandT
-macmenu &File.New\ Tab key=<D-T>
-map <D-t> :CommandT<CR>
-imap <D-t> <Esc>:CommandT<CR>
+"explorer mappings
+nnoremap <f1> :NERDTreeToggle<cr>
+nnoremap <f2> :TlistToggle<cr>
 
 "load ftplugins and indent files
 filetype plugin on
@@ -103,31 +101,19 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
+" setting some visual
+colorscheme railscasts
+set t_Co=256
+set guitablabel=%M%t
+
 if has("gui_running")
-    "tell the term has 256 colors
-    set t_Co=256
-
-    colorscheme railscasts
-    set guitablabel=%M%t
-    set lines=40
-    set columns=115
-
-    if has("gui_gnome")
-        set term=gnome-256color
-        colorscheme railscasts
-        set guifont=Monospace\ Bold\ 12
-    endif
-else
     "dont load csapprox if there is no gui support - silences an annoying warning
     let g:CSApprox_loaded = 1
+endif
 
-    "set railscasts colorscheme when running vim in gnome terminal
-    if $COLORTERM == 'gnome-terminal'
-        set term=gnome-256color
-        colorscheme railscasts
-    else
-        colorscheme default
-    endif
+"set colorscheme when running vim in gnome terminal
+if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
 endif
 
 "map Q to something useful
@@ -167,8 +153,6 @@ nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
-
-
 
 " Removes trailing spaces
 function TrimWhiteSpace()
