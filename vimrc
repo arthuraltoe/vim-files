@@ -56,6 +56,8 @@ set autoindent
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+map f za
+map F zA
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -81,6 +83,11 @@ let g:NERDTreeWinSize = 40
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TlistToggle<cr>
+
+" Command-T for CommandT
+macmenu &File.New\ Tab key=<D-T>
+map <D-t> :CommandT<CR>
+imap <D-t> <Esc>:CommandT<CR>
 
 "load ftplugins and indent files
 filetype plugin on
@@ -109,20 +116,6 @@ if has("gui_running")
         set term=gnome-256color
         colorscheme railscasts
         set guifont=Monospace\ Bold\ 12
-    endif
-
-    if has("gui_mac") || has("gui_macvim")
-        "set guifont=Menlo:h14
-        " key binding for Command-T to behave properly
-        " uncomment to replace the Mac Command-T key to Command-T plugin
-        "macmenu &File.New\ Tab key=<nop>
-        "map <D-t> :CommandT<CR>
-        " make Mac's Option key behave as the Meta key
-        "set invmmta
-        try
-          set transparency=5
-        catch
-        endtry
     endif
 else
     "dont load csapprox if there is no gui support - silences an annoying warning
@@ -168,22 +161,14 @@ map <D-S-Left> :tabprevious<CR>
 map <D-S-Down> :tabclose<CR>
 map <D-S-Up> :tabnew<CR>
 
-" shorcut for tabs using Command + <tab number>
-map <D-1> :tabn 1<CR>
-map <D-2> :tabn 2<CR>
-map <D-3> :tabn 3<CR>
-map <D-4> :tabn 4<CR>
-map <D-5> :tabn 5<CR>
-map <D-6> :tabn 6<CR>
-map <D-7> :tabn 7<CR>
-map <D-8> :tabn 8<CR>
-map <D-9> :tabn 9<CR>
 
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+
+
 
 " Removes trailing spaces
 function TrimWhiteSpace()
@@ -196,6 +181,28 @@ autocmd FileAppendPre * :call TrimWhiteSpace()
 autocmd FilterWritePre * :call TrimWhiteSpace()
 autocmd BufWritePre * :call TrimWhiteSpace()
 
+" Map Command-# to switch tabs
+map  <D-0> 0gt
+imap <D-0> <Esc>0gt
+map  <D-1> 1gt
+imap <D-1> <Esc>1gt
+map  <D-2> 2gt
+imap <D-2> <Esc>2gt
+map  <D-3> 3gt
+imap <D-3> <Esc>3gt
+map  <D-4> 4gt
+imap <D-4> <Esc>4gt
+map  <D-5> 5gt
+imap <D-5> <Esc>5gt
+map  <D-6> 6gt
+imap <D-6> <Esc>6gt
+map  <D-7> 7gt
+imap <D-7> <Esc>7gt
+map  <D-8> 8gt
+imap <D-8> <Esc>8gt
+map  <D-9> 9gt
+imap <D-9> <Esc>9gtv
+
 " navigate between windows mappings
 map <A-D-Down> <c-w>j
 map <A-D-Up> <c-w>k
@@ -205,3 +212,4 @@ map <A-D-Left> <c-w>h
 " autocomplete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+
