@@ -23,11 +23,8 @@ set hlsearch    "hilight searches by default
 
 set number      "add line numbers
 set showbreak=...
-set wrap linebreak nolist
+"set wrap linebreak nolist
 
-"display tabs and trailing spaces
-set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 "try to make possible to navigate within lines of wrapped lines
 nmap <Down> gj
@@ -42,6 +39,9 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set laststatus=2
+
+"highlight current line and column
+set cursorline
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
@@ -72,7 +72,7 @@ let tlist_php_settings = 'php;c:class;f:Functions'
 let Tlist_Use_Right_Window=1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Display_Tag_Scope = 1
-let Tlist_Process_File_Always = 1
+let Tlist_Process_File_Always = 0
 let Tlist_Show_One_File = 1
 
 "nerdtree settings
@@ -197,3 +197,6 @@ map <A-D-Left> <c-w>h
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
+"display tabs and trailing spaces
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
