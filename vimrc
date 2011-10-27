@@ -102,7 +102,7 @@ set ttymouse=xterm2
 set hidden
 
 " setting some visual
-colorscheme railscasts
+colorscheme railscasts2
 set t_Co=256
 set guitablabel=%M%t
 
