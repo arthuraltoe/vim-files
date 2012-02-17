@@ -31,13 +31,6 @@ nmap <Down> gj
 nmap <Up> gk
 set fo=l
 
-"statusline setup
-set statusline=%f       "tail of the filename
-
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
 set laststatus=2
 
 "highlight current line and column
@@ -146,7 +139,6 @@ map <D-S-Right> :tabnext<CR>
 map <D-S-Left> :tabprevious<CR>
 map <D-S-Down> :tabclose<CR>
 map <D-S-Up> :tabnew<CR>
-
 
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
