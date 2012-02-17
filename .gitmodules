@@ -161,3 +161,9 @@
 [submodule "bundle/git-runtime"]
 	path = bundle/git-runtime
 	url = https://github.com/tpope/vim-git.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
